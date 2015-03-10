@@ -1,0 +1,6 @@
+Dependencies for Project 'Lab2', Target 'HelloLaunchPad': (DO NOT MODIFY !)
+F (.\startup.s)(0x533A4CC2)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\pro.c)(0x534F937F)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\..-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Luminary-Drvmdk -DPART_LM4F120H5QR -o .\pro.o --omf_browse .\pro.crf --depend .\pro.d)
+I (C:\Keil\ARM\Inc\Luminary\lm4f120h5qr.h)(0x5209CADA)
+I (C:\Keil\ARM\ARMCC\include\math.h)(0x51C7DA6C)
+F (.\texas.o)(0x52CCC39A)()
