@@ -219,8 +219,8 @@ int main()
 
     while(error_distance!=0)
     {
-        error_prop=K_p*(error_get);
-        error_diff=K_d*((error_old-error_get)/delta_t);
+        error_prop=K_p*(error);
+        error_diff=K_d*((error_old-error)/delta_t);
         error_integ=K_i*(total_error*delta_t);
 
         total=error_prop+error_diff+error_integ;
