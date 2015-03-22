@@ -71,30 +71,8 @@ void PortE_Init(void)
 
 }
 
-float total_x=0,total_y=0,total_angle=0;
-float x_g=30;
-float y_g=30;
-float	angle_g = 3.14/4;
-int raw_distance;
-float distance;
-int raw_angle;
-float angle;
-
-void store_x(float x)
-{
-	total_x=total_x+x;
-}
-
-void store_y(float y)
-{
-	total_y=total_y+y;
-}
-
-void store_angle(float angle)
-{
-	total_angle=total_angle+angle;
-}
-
+float distance_g=40;
+float total_distance;
 
 void convert(float distance,float angle)
 {
@@ -194,28 +172,31 @@ void traverse_distance(float error_x,float error_y)
 
     }
 
+void ISR(void){
+//do some math and calclations
+
+    counter+=1;
+    total_distance+=counter*(constant);
+}
 int main()
 {
-    float K_p_2,K_i_2,K_d_2;
-    float K_p_1,K_i_1,K_d_1;
-    float error_prop,error_integral,error_diff;
-    float theta_g,delta_t;
-    float total_error_angle,error_angle_old;
-    float error_old_x=0;
-    float error_old_y=0;
-    float total_error_x=0,total_error_y=0;
-    float error_angle,total_error,error_x,error_y;
+    float K_p,K_i,K_d; //these are the coefficients
+    float error_prop,error_integral,error_diff; //these are the errors
+    float distance_g,delta_t;
+    float total_error,error_old;
 
-    K_p_1=1;
-    K_i_1=1;
-    K_d_1=0.1;
+    /* tuning the parameters
+    K_p=1;
+    K_i=1;
+    K_d=0.1;
+    */
 
-    K_p_2=1;
-    K_i_2=1;
-    K_d_2=0.1;
-
+    /* initializing important parameters*/
     delta_t=10;
-    error_angle=theta_g;
+    total_error = 0;
+    error_old = 0;
+    error = distance_g;
+    error_distance = distance_g;
 
     while(error_distance!=0)
     {
@@ -230,5 +211,6 @@ int main()
         error_distance=distance_g-total_distance;
         error=error_distance;
     }
+    return 0;
 }
 
