@@ -7,10 +7,8 @@ long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
 
-int left_count_a=0;
-int right_count_a=0;
-//int left_count_b=0;
-//int right_count_b=0;
+int left_count=0;
+int right_count=0;
 
 
 //motor_driver_port_0123
@@ -28,11 +26,6 @@ void PortD_Init(void)
   GPIO_PORTD_DEN_R |= 0x0F;
 
 }
-// cliff avoiding senors_1234
-void PortC_Init(void);
-//obstacle avoiding sensors_1234
-void PortB_Init(void);
-
 // testing motors 04
 void PortF_Init(void)
 {
@@ -185,11 +178,11 @@ int main()
     float distance_g,delta_t;
     float total_error,error_old;
 
-    /* tuning the parameters
+    // tuning the parameters
     K_p=1;
     K_i=1;
     K_d=0.1;
-    */
+
 
     /* initializing important parameters*/
     delta_t=10;
