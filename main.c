@@ -113,39 +113,13 @@ float mod(float a)
 		return a;
 }
 
-void run_motor_right(float error_angle)
-{
-	int i;
-		for(i=0;i<error_angle;i++)
-		{
-			GPIO_PORTD_DATA_R|=0x04;
-		}
-	    for(i=0;i<10;i++)
-	    {
-			GPIO_PORTD_DATA_R&= ~0x04;
-	    }
- }
-void run_motor_left(float error_angle)
-{
-	int i;
-		for(i=0;i<error_angle;i++)
-		{
-			GPIO_PORTD_DATA_R|=0x01;
-		}
-	    for(i=0;i<100;i++)
-	    {
-			GPIO_PORTD_DATA_R&= ~0x01;
-	    }
-
-}
-
 
 void traverse_distance(float distance)
 {
 	int i;
     //adjust the denominator if you want to change the power
 	//res=sqrt(pow(error_x,2)+pow(error_y,2));
-		for(i=0;i<abs(distance);i++)
+		for(i=0;i<int(distance);i++)
 		{
 			GPIO_PORTD_DATA_R|=0x05;
 		}
