@@ -78,6 +78,7 @@ void GPIOPortF_Handler(void)
 {
 	GPIO_PORTF_ICR_R|=0x10;
 	left_count_a++;
+    //just a convention can also increment right_count
 }
 
 void GPIOPortE_Handler(void)
