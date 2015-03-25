@@ -10,7 +10,6 @@ void WaitForInterrupt(void);  // low power mode
 
 int left_count=0;
 int right_count=0;
-int counter = 0;
 
 //motor_driver_port_0123
 void PortD_Init(void)
@@ -78,33 +77,33 @@ void convert(float distance,float angle)
 void GPIOPortF_Handler(void)
 {
 	GPIO_PORTF_ICR_R|=0x10;
-	left_count_a++;
+	left_count++;
     //just a convention can also increment right_count
 }
 
 void GPIOPortE_Handler(void)
 {
 	GPIO_PORTE_ICR_R|=0x10;
-	right_count_a++;
-	raw_angle=1.6-left_count_a;
+	right_count++;
+	raw_angle=1.6-left_count;
 	angle=raw_angle*0.06244;
 	store_angle(angle);
 
 
-	if(right_count_a>left_count_a)
+	if(right_count>left_count)
 		{
-			raw_distance=left_count_a;
-			distance=left_count_a*0.6875;
+			raw_distance=left_count;
+			distance=left_count*0.6875;
 			convert(distance,angle);
 		}
 	else
 	    {
-	    	raw_distance=left_count_a;
-			distance=right_count_a*1.25;
+	    	raw_distance=left_count;
+			distance=right_count*1.25;
 			convert(distance,angle);
 		}
-			right_count_a=0;
-		left_count_a=0;
+		right_count=0;
+		left_count=0;
 }
 
 float mod(float a)
