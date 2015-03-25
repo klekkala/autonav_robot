@@ -1,6 +1,7 @@
 #include<lm4f120h5qr.h>
 #include<math.h>
 
+//system functions
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
