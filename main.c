@@ -10,7 +10,7 @@ void WaitForInterrupt(void);  // low power mode
 
 int left_count=0;
 int right_count=0;
-
+int counter = 0;
 
 //motor_driver_port_0123
 void PortD_Init(void)
