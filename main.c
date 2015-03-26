@@ -65,7 +65,7 @@ void PortE_Init(void)
 }
 
 float distance_g=40;
-float total_distance;
+float total;
 
 void convert(float distance,float angle)
 {
