@@ -78,25 +78,9 @@ void GPIOPortE_Handler(void)
 {
 	GPIO_PORTE_ICR_R|=0x10;
 	right_count++;
-	raw_angle=1.6-left_count;
-	angle=raw_angle*0.06244;
-	store_angle(angle);
 
-
-	if(right_count>left_count)
-		{
-			raw_distance=left_count;
-			distance=left_count*0.6875;
-			convert(distance,angle);
-		}
-	else
-	    {
-	    	raw_distance=left_count;
-			distance=right_count*1.25;
-			convert(distance,angle);
-		}
-		right_count=0;
-		left_count=0;
+	distance=right_count*0.6875;
+	right_count=0;
 }
 
 float mod(float a)
