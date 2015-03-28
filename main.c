@@ -66,12 +66,6 @@ void PortE_Init(void)
 
 float distance_g=40;
 
-void convert(float distance,float angle)
-{
-	store_x(distance*angle);
-	store_y(distance*angle);
-}
-
 
 void GPIOPortF_Handler(void)
 {
