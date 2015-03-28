@@ -128,7 +128,7 @@ void traverse_distance(float distance)
 			GPIO_PORTD_DATA_R&= ~0x05;
 	    }
 
-    }
+}
 
 void ISR(void){
 //do some math and calclations
@@ -147,7 +147,6 @@ int main()
     K_p=1;
     K_i=1;
     K_d=0.1;
-
 
     /* initializing important parameters*/
     delta_t=10;
