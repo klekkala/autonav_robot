@@ -74,13 +74,14 @@ void GPIOPortF_Handler(void)
     //just a convention can also increment right_count
 }
 
+
+//This is the ISR
 void GPIOPortE_Handler(void)
 {
 	GPIO_PORTE_ICR_R|=0x10;
 	right_count++;
 
 	distance=right_count*0.6875;
-	right_count=0;
 }
 
 float mod(float a)
@@ -108,12 +109,6 @@ void traverse_distance(float distance)
 
 }
 
-void ISR(void){
-//do some math and calclations
-
-    counter+=1;
-    total_distance+=counter*(constant);
-}
 int main()
 {
     float K_p,K_i,K_d; //these are the coefficients
