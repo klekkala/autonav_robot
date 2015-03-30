@@ -104,7 +104,6 @@ void traverse_distance(float distance)
 	    {
 			GPIO_PORTD_DATA_R&= ~0x05;
 	    }
-
 }
 
 int main()
