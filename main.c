@@ -66,14 +66,12 @@ void PortE_Init(void)
 
 float distance_g=40;
 
-
 void GPIOPortF_Handler(void)
 {
 	GPIO_PORTF_ICR_R|=0x10;
 	left_count++;
     //just a convention can also increment right_count
 }
-
 
 //This is the ISR
 void GPIOPortE_Handler(void)
