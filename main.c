@@ -14,7 +14,7 @@ int right_count=0;
 //motor_driver_port_0123
 void PortD_Init(void)
 {
-		volatile unsigned long delay;
+  volatile unsigned long delay;
   SYSCTL_RCGC2_R |= 0x00000008;
   delay = SYSCTL_RCGC2_R;
   GPIO_PORTD_LOCK_R = 0x4C4F434B;
