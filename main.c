@@ -61,7 +61,6 @@ void PortE_Init(void)
   NVIC_PRI7_R=(NVIC_PRI7_R&0xFF00FFFF)|0x00A00000;
   NVIC_EN0_R=0x00000010;
   EnableInterrupts();
-
 }
 
 float distance_g=40;
