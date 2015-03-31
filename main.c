@@ -90,7 +90,6 @@ float mod(float a)
 		return a;
 }
 
-
 void traverse_distance(float distance)
 {
 	int i;
