@@ -8,7 +8,7 @@ long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
 
-int left_count=0;
+int left_count=0; //This will be used in Linear PID controller
 int right_count=0;
 
 //motor_driver_port_0123
