@@ -1,6 +1,6 @@
 #include<lm4f120h5qr.h>
 #include<math.h>
-#include<stdio.h>
+
 //system functions
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
