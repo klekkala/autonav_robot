@@ -92,7 +92,7 @@ float mod(float a)
 void traverse_distance(float distance)
 {
 	int i;
-    ////adjust the denominator if you want to change the power
+    /////adjust the denominator if you want to change the power
 	//res=sqrt(pow(error_x,2)+pow(error_y,2));
 		for(i=0;i<int(distance);i++)
 		{
